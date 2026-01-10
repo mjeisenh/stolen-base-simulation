@@ -7,6 +7,11 @@
 ## Project Overview
 This project explores the application of **Digital Twins**—virtual models of physical entities—to enhance in-game decision-making in professional baseball. Specifically, it focuses on simulating the **stolen base attempt** at second base. By converting kinematic physics into stochastic service times, this tool provides a high-speed decision tool for managers to evaluate the probability of a successful steal before a pitch is delivered.
 
+## Repository Structure
+* `/docs`: Includes the full research paper detailing simulation foundations and exploratory notebook with coding methodologies explained in depth.
+* `/src`: Standalone Python scripts for OpenCV video analysis and data ingestion.
+* `main.py`: Available to use for demo purposes. Future enhancements will enable full simulation capabilities. 
+
 ## The Strategic Framework: Run Expectancy (RE24)
 To quantify the value of a stolen base, the model utilizes the **Run Expectancy Matrix (RE24)**. 
 * **The Threshold**: In a standard 0-out scenario with a runner on first, the penalty for failure (-0.588 runs) significantly outweighs the reward for success (+0.237 runs).
@@ -42,14 +47,7 @@ In a test case involving Oneil Cruz, the model issued a "HOLD" recommendation (8
 * **Finding**: Video review revealed Cruz stole on a **77-mph off-speed pitch**.
 * **Future Work**: Future iterations will model delivery time as a conditional variable based on predicted pitch type (Fastball vs. Off-speed) to further reduce uncertainty.
 
-## Repository Structure
-
-* `/notebooks`: Contains the Jupyter Notebook with the simulation logic and Monte Carlo engine.
-* `/docs`: Includes the full research paper detailing the mathematical foundations.
-* `/src`: Standalone Python scripts for OpenCV video analysis and data ingestion.
-
 ## Requirements
-
 * `numpy`
 * `pandas`
 * `scipy`

@@ -53,5 +53,6 @@ In a test case involving Oneil Cruz, the model issued a "HOLD" recommendation (8
 * `scipy`
 * `opencv-python`
 * `matplotlib`
+* `pybaseball`
 
 ---

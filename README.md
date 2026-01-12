@@ -1,4 +1,4 @@
-# Stolen Base Digital Twin: A Kinematic Simulation for MLB Decision-Making
+# Stolen Base Digital Twin: A Stochastic Simulation for Baseball Decision-Making
 
 ![Python](https://img.shields.io/badge/python-3670A0?style=for-the-badge&logo=python&logoColor=ffdd54)
 ![MLB Statcast](https://img.shields.io/badge/Data-MLB%20Statcast-blue?style=for-the-badge)

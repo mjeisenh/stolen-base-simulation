@@ -6,20 +6,20 @@
 ![Simulation](https://img.shields.io/badge/Method-Monte%20Carlo-green?style=for-the-badge)
 
 ## Project Overview
-This project utilizes a Monte Carlo discrete-event simulation framework designed to optimize in-game decision-making by quantifying the probability of a successfully stealing second base. Leveraging MLB Statcast data from the 2025 season, the model fits derived probability distributions to player-specific tendencies (pitcher time-to-plate, catcher pop-time, runner lead distance / sprint speed). Instead of relying on static league averages, this tool provides dynamic, matchup-specific probabilities with an aim to maximize run expectancy.  
+This project utilizes a Monte Carlo discrete-event simulation framework designed to optimize in-game decision-making by quantifying the probability of successfully stealing second base. Leveraging MLB Statcast data from the 2025 season, the model fits derived probability distributions to player-specific tendencies (pitcher time-to-plate, catcher pop-time, runner lead distance / sprint speed). Instead of relying on static league averages, this tool provides dynamic, matchup-specific probabilities with an aim to maximize run expectancy.  
 
 ## Go/No-Go via the Run Expectancy Matrix (RE24)
 To quantify the value of a stolen base, the model utilizes the Run Expectancy Matrix (RE24) with a run environment set at 4.15 runs per game. 
 * **The Threshold**: In a standard 0-out scenario with a runner on first, the penalty (caught stealing, -0.588 runs) significantly outweighs the reward for success (+0.237 runs).
 * **Break-Even Point**: A runner requires a success probability ($P_{BE}$) of approximately **71.3%** to justify the attempt mathematically.
-* **The Goal**: This simulation replaces guesswork with precise, real-time probability estimates based on specific player matchups.
+* **The Goal**: This simulation provides real-time probability estimates based on specific player matchups.
 
 ## Technical Architecture
 The simulation executes as a discrete-event system, where the stolen base is modeled as two asynchronous, parallel processes - Offense and Defense - competing for the same resource: Second Base.
 
 ### 1. Defensive Process ($t_{defense}$)
 The defensive process is a linear sequence of three stochastic service times:
-* **Pitcher Time-to-Plate ($t_{pitch}$)**: Time from first move to pitch received by the catcher, sampled from Statcast run game metrics. 
+* **Pitcher Time-to-Plate ($t_{pitch}$)**: Time from first move to pitch received by the catcher, estimated via Statcast run game metrics and validated via raw game footage. 
 * **Catcher Pop Time ($t_{pop}$)**: Time from pitch reception to the ball reaching second base, sampled from Statcast catcher metrics. 
 * **Tag Application ($t_{tag}$)**: A stochastic delay representing the infielder's catch-and-tag sequence, sampled from $N(0.15, 0.05)$.
 * **Formula**: $t_{defense}=t_{pitch}+t_{pop}+t_{tag}$

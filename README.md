@@ -14,6 +14,14 @@ To quantify the value of a stolen base, the model utilizes the Run Expectancy Ma
 * **Break-Even Point**: A runner requires a success probability ($P_{BE}$) of approximately **71.3%** to justify the attempt mathematically.
 * **The Goal**: This simulation provides real-time probability estimates based on specific player matchups.
 
+<p align="center">
+  <img
+    src="https://github.com/user-attachments/assets/58a0d9c1-0959-42b7-b034-9b40621eeef8"
+    alt="Image"
+    width="700"
+  />
+</p>
+
 ## Technical Architecture
 The simulation executes as a discrete-event system, where the stolen base is modeled as two asynchronous, parallel processes - Offense and Defense - competing for the same resource: Second Base.
 
@@ -30,6 +38,14 @@ The offensive process is modeled as a kinematics-based lookup using Statcast 90f
 * **Kinematic Phase**: Time required to traverse the effective distance ($d_{eff}=90ft-d_{lead}$)
 * **Formula**: $t_{steal}=t_{react}+t_{run}-0.15$
 	* Note that $-0.15s$ adjusts the runner service time assuming a stolen base jump occurs faster than a batter leaving the box on contact
+
+<p align="center">
+  <img
+    src="https://github.com/user-attachments/assets/80c4a9ec-b17e-4b5f-b556-6c059d870e5e"
+    alt="Image"
+    width="700"
+  />
+</p>
 
 ## Model Validation & Verification
 

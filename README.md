@@ -6,7 +6,7 @@
 ![Simulation](https://img.shields.io/badge/Method-Monte%20Carlo-green?style=for-the-badge)
 
 ## Project Overview
-This project utilizes a Monte Carlo discrete-event simulation framework designed to optimize in-game decision-making by quantifying the probability of successfully stealing second base. Leveraging MLB Statcast data from the 2025 season, the model fits derived probability distributions to player-specific tendencies (pitcher time-to-plate, catcher pop-time, runner lead distance / sprint speed). Instead of relying on static league averages, this tool provides dynamic, matchup-specific probabilities with an aim to maximize run expectancy.  
+This project utilizes a Monte Carlo discrete-event simulation framework designed to optimize in-game decision-making by quantifying the probability of successfully stealing second base. Leveraging MLB Statcast data from the 2025 season, the model fits derived probability distributions to player-specific tendencies (pitcher time-to-plate, catcher pop-time, runner lead distance / sprint speed). Instead of relying on static league averages, this tool provides dynamic, matchup-specific probabilities with an aim to maximize run expectancy in base stealing opportunities. 
 
 ## Go/No-Go via the Run Expectancy Matrix (RE24)
 To quantify the value of a stolen base, the model utilizes the Run Expectancy Matrix (RE24) with a run environment set at 4.15 runs per game. 

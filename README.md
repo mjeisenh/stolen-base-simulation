@@ -14,9 +14,11 @@ To quantify the value of a stolen base, the model utilizes the Run Expectancy Ma
 * **Break-Even Point**: A runner requires a success probability ($P_{BE}$) of approximately **71.3%** to justify the attempt mathematically.
 * **The Goal**: This simulation provides real-time probability estimates based on specific player matchups.
 
+The image below presents a sample output from the simulation model. For this matchup, the model recommends a "GO" decision for Chandler Simpson against a Greg Weissert / Connor Wong battery, estimating an 83.6% probability of a successful stolen base attempt.
+
 <p align="center">
   <img
-    src="https://github.com/user-attachments/assets/58a0d9c1-0959-42b7-b034-9b40621eeef8"
+    src="https://github.com/user-attachments/assets/8a4d8215-9f20-4b98-a0dc-a5fe110555d9"
     alt="Image"
     width="700"
   />
